@@ -20,6 +20,9 @@ namespace Persistence
             services.AddDbContext<BaseDbContext>(options => options.UseNpgsql(configuration.GetConnectionString("KodlamaIoDevsConnectionString")));
 
             services.AddScoped <IProgrammingLanguageRepository, ProgrammingLanguageRepository>();
+            services.AddScoped <ITechnologyRepository, TechnologyRepository>();
+            services.AddScoped <ISocialMediaProfileRepository, SocialMediaProfileRepository>();
+            services.AddScoped <IUserRepository, UserRepository>();
 
             return services;
         }
